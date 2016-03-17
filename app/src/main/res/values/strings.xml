@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string-array name="MenuOptions">
+        <item>India</item>
+        <item>World</item>
+        <item>Business</item>
+        <item>Technology</item>
+        <item>Entertainment</item>
+        <item>Sports</item>
+        <item>Science</item>
+        <item>Health</item>
+        <item>Settings</item>
+    </string-array>
+
+    <string-array name="DefaultEdition">
+        <item>India</item>
+        <item>World</item>
+        <item>Business</item>
+        <item>Technology</item>
+        <item>Entertainment</item>
+        <item>Sports</item>
+        <item>Science</item>
+        <item>Health</item>
+
+    </string-array>
+    <string-array name="DefaultEditionValue">
+        <item>India</item>
+        <item>World</item>
+        <item>Business</item>
+        <item>Technology</item>
+        <item>Entertainment</item>
+        <item>Sports</item>
+        <item>Science</item>
+        <item>Health</item>
+
+    </string-array>
+
+    <string-array name="ColorCode">
+        <item>RED</item>
+        <item>GREEN</item>
+        <item>BLUE</item>
+        <item>CYAN</item>
+        <item>DKGRAY</item>
+        <item>GRAY</item>
+        <item>LTGRAY</item>
+        <item>MAGENTA</item>
+        <item>TRANSPARENT</item>
+        <item>GRAY</item>
+        <item>WHITE</item>
+        <item>YELLOW</item>
+    </string-array>
+    <string-array name="ColorValue">
+        <item>RED</item>
+        <item>GREEN</item>
+        <item>BLUE</item>
+        <item>CYAN</item>
+        <item>DKGRAY</item>
+        <item>GRAY</item>
+        <item>LTGRAY</item>
+        <item>MAGENTA</item>
+        <item>TRANSPARENT</item>
+        <item>GRAY</item>
+        <item>WHITE</item>
+        <item>YELLOW</item>
+    </string-array>
+
+    <string-array name="sa_deleteHistory_title">
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>5 days</item>
+        <item>10 days</item>
+        <item>20 days</item>
+        <item>30 days</item>
+    </string-array>
+
+    <string-array name="sa_deleteHistory_values">
+        <item>1</item>
+        <item>2</item>
+        <item>5</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+    </string-array>
+
+    <string name="drawer_open">Drawer opened</string>
+    <string name="drawer_closed">Drawer closed</string>
+    <string name="title_activity_settings">settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

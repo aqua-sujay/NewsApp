@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Choose Default Edition "
+        android:key="details_color_key">
+    <ListPreference
+        android:key="default_edition_key"
+        android:title="Edition"
+        android:entries="@array/DefaultEdition"
+        android:entryValues="@array/DefaultEditionValue"
+        android:defaultValue="India" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Color">
+<PreferenceScreen
+    android:title="Navigation color "
+    android:key="nav_color_key">
+
+    <ListPreference
+        android:key="color_nav_title_key"
+        android:title="Title color"
+        android:entries="@array/ColorCode"
+        android:entryValues="@array/ColorValue"
+        android:defaultValue="BLACK"/>
+    <ListPreference
+        android:key="color_nav_background_key"
+        android:title="Background color"
+        android:entries="@array/ColorCode"
+        android:entryValues="@array/ColorValue"
+        android:defaultValue="GRAY"/>
+    <ListPreference
+        android:key="color_nav_divider_key"
+        android:title="Divider color"
+        android:entries="@array/ColorCode"
+        android:entryValues="@array/ColorValue"
+        android:defaultValue="WHITE"/>
+
+</PreferenceScreen>
+
+    <PreferenceScreen
+        android:title="News List color"
+        android:key="list_color_key">
+
+        <ListPreference
+            android:key="color_list_title_key"
+            android:title="Title color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="BLACK"/>
+        <ListPreference
+            android:key="color_list_background_key"
+            android:title="Background color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="WHITE"/>
+        <ListPreference
+            android:key="color_list_divider_key"
+            android:title="Divider color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="BLUE"/>
+
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:title="NEWS COLOR "
+        android:key="details_color_key">
+
+        <ListPreference
+            android:key="color_details_title_key"
+            android:title="Title color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="WHITE"/>
+        <ListPreference
+            android:key="color_details_title_background_key"
+            android:title="Title Background color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="YELLOW"/>
+        <ListPreference
+            android:key="color_details_description_title_key"
+            android:title="Description Text color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="WHITE"/>
+        <ListPreference
+            android:key="color_details_description_background_key"
+            android:title="Background color"
+            android:entries="@array/ColorCode"
+            android:entryValues="@array/ColorValue"
+            android:defaultValue="RED"/>
+    </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Delete News Posts">
+        <PreferenceScreen android:title="Delete News">
+<ListPreference
+    android:key="delete_posts_older_than_key"
+    android:title="Delete posts older than"
+    android:entries="@array/sa_deleteHistory_title"
+    android:entryValues="@array/sa_deleteHistory_values"
+    android:defaultValue="5"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

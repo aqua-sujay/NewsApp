@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#49e10d"
+    android:orientation="vertical"
+    android:backgroundTint="#488037">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minLines="2"
+        android:text="title Text"
+        android:id="@+id/titletext"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:background="#fbc603" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_gravity="right"
+        android:text="source Text"
+        android:id="@+id/sourcetext"
+        android:textSize="15dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fcfcfc"
+        android:layout_gravity="right"
+        android:text="date"
+        android:id="@+id/datetext"
+        android:visibility="visible"
+        android:textSize="15dp" />
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+
+        android:layout_gravity="center"
+        android:text="description Text"
+        android:id="@+id/descriptiontext"
+        android:visibility="visible"
+
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fae20a"
+        android:layout_gravity="center"
+        android:text="link Text"
+        android:id="@+id/linktext"
+        android:visibility="visible" />
+
+</LinearLayout>
+</ScrollView>
