@@ -1,17 +1,23 @@
 package app.com.example.sujay.newsapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.net.URI;
 
 /**
  * Created by sujay on 11-01-2016.
@@ -55,8 +61,13 @@ public class NewsView extends Fragment {
         title.setText(details.getString("title"));
         source.setText(details.getString("source"));
         date.setText(details.getString("date"));
+
         description.setText(details.getString("description"));
-        link.setText(details.getString("link"));
+        String li="<a href='"+details.getString("link")+"'>LINK</a>";
+        link.setClickable(true);
+        link.setMovementMethod(LinkMovementMethod.getInstance());
+        link.setText(Html.fromHtml(li));
+
         Bitmap bmp=null;
         // if image is not stored
         if(details.getByteArray("image")!=null) {
@@ -67,5 +78,6 @@ public class NewsView extends Fragment {
 
         return v;
     }
+
 
 }

@@ -3,6 +3,7 @@ package app.com.example.sujay.newsapp;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.View;
 
 import java.io.IOException;
 
@@ -24,6 +26,7 @@ public class DetailedActivity extends FragmentActivity{
     SQLiteDatabase db;
     Cursor cursor;
     String topic;
+    String lin;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,10 +75,14 @@ public class DetailedActivity extends FragmentActivity{
             data.putString("source",cursor.getString(cursor.getColumnIndex("SOURCE")));
             data.putString("date",cursor.getString(cursor.getColumnIndex("DATE")));
             data.putString("description",cursor.getString(cursor.getColumnIndex("DESCRIPTION")));
+
             data.putString("link", cursor.getString(cursor.getColumnIndex("LINK")));
             data.putByteArray("image", cursor.getBlob(cursor.getColumnIndex("IMAGE")));
 
             fx.setArguments(data);
+            //to show link to website on post
+            cursor.moveToPosition(position-1);
+            lin=cursor.getString(cursor.getColumnIndex("LINK"));
 
 
 
@@ -85,6 +92,17 @@ public class DetailedActivity extends FragmentActivity{
         {
             Log.d("test", cursor.getCount() + ":getCount");
             return  cursor.getCount();
+        }
+
+    }
+    public void clickLink(View v)
+    {
+        Intent intent=new Intent(Intent.ACTION_VIEW);
+        // intent.setType("text/html");
+        intent.setData(Uri.parse(lin));
+        if (intent.resolveActivity(this.getPackageManager())!=null)
+        {
+            startActivity(intent);
         }
 
     }

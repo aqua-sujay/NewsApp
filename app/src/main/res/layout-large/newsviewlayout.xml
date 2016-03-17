@@ -71,7 +71,8 @@
         android:layout_gravity="center"
         android:text="link Text"
         android:id="@+id/linktext"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:autoLink="web"/>
 
 </LinearLayout>
 </ScrollView>
