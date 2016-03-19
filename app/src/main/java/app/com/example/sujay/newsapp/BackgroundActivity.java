@@ -363,7 +363,9 @@ public  class BackgroundActivity extends AsyncTask<Void,HashMap<String,String>,I
 
                         if((l=web.ndtvImage(LINK))!=null)
                         {
+                            Log.d("webExtract", "switch back "+SRC);
                             SRC=l;
+                            Log.d("webExtract", "switch back "+SRC);
                         }
                         break;
                 }
