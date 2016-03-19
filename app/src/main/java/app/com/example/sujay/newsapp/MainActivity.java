@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -34,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
     ImageView dlistimage;
-
+    ProgressBar pb;
+    TextView loadtext;
     public URL getUrl() {
         return url;
     }
@@ -60,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         }
         */
         setContentView(R.layout.activity_main);
-
+pb=(ProgressBar)findViewById(R.id.progressBar);
+        loadtext=(TextView)findViewById(R.id.loadtext);
         //bt=(Button)finViewById(R.id.button);
         Intent intent=getIntent();
 
@@ -155,8 +159,8 @@ public class MainActivity extends AppCompatActivity {
         //check if net is on
         if(detector.isConnected()) {
             Toast.makeText(this, "NetConnected successfully", Toast.LENGTH_LONG).show();
-            backgroundActivity=new BackgroundActivity(url,topic);
-            backgroundActivity.execute( this);
+            backgroundActivity=new BackgroundActivity(url,topic,this);
+            backgroundActivity.execute( );
             Log.d("test", "background activity stART");
 
         }
@@ -171,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
 
    //    bt.setOnClickListener(listener);
     }
+
 
     public URL findURL(String topic) throws MalformedURLException,IOException
     {

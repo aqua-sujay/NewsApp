@@ -45,7 +45,7 @@
         <item>LTGRAY</item>
         <item>MAGENTA</item>
         <item>TRANSPARENT</item>
-        <item>GRAY</item>
+        <item>BLACK</item>
         <item>WHITE</item>
         <item>YELLOW</item>
     </string-array>
@@ -59,7 +59,7 @@
         <item>LTGRAY</item>
         <item>MAGENTA</item>
         <item>TRANSPARENT</item>
-        <item>GRAY</item>
+        <item>BLACK</item>
         <item>WHITE</item>
         <item>YELLOW</item>
     </string-array>

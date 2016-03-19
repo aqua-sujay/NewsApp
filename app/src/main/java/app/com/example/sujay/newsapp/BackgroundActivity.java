@@ -7,7 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.util.Xml;
+import android.view.View;
 import android.widget.BaseAdapter;
+import android.widget.ProgressBar;
 
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -34,7 +36,7 @@ import org.xmlpull.v1.XmlPullParserException;
 /**
  * Created by sujay on 10-01-2016.
  */
-public  class BackgroundActivity extends AsyncTask<Context,HashMap<String,String>,Void>
+public  class BackgroundActivity extends AsyncTask<Void,HashMap<String,String>,Integer>
 {
     Context context;
     URL url=null;
@@ -51,16 +53,17 @@ public  class BackgroundActivity extends AsyncTask<Context,HashMap<String,String
     URLConnection con;
     //************************************************************************************************************
 
-    public BackgroundActivity(URL url,String topic)
+    public BackgroundActivity(URL url,String topic,Context con)
     {
         this.url=url;
         this.topic=topic;
+        this.context=con;
         Log.d("shared","background url:"+url);
     }
     //*****************************************************************************************************
-    public Void doInBackground(Context[] cont)
+    public Integer doInBackground(Void... params)
     {
-this.context=cont[0];
+//this.context=cont[0];
   try{
       xmlParser();
   }catch(XmlPullParserException x)
@@ -73,7 +76,7 @@ this.context=cont[0];
 
 
        //  domParse(cont[0]);
-       return null;
+       return 0;
     }
     public void domParse(Context cont)
     {
@@ -187,14 +190,16 @@ this.context=cont[0];
 
 
     }
-    public void onPostExecute( )
+    public void onPostExecute(Integer i)
     {
+        ((MainActivity)context).pb.setVisibility(View.GONE);
+        ((MainActivity)context).loadtext.setVisibility(View.GONE);
 
     }
     public void onPreExecute()
     {
-
-
+        ((MainActivity)context).pb.setVisibility(View.VISIBLE);
+        ((MainActivity)context).loadtext.setVisibility(View.VISIBLE);
 
     }
     public void onProgressUpdate(HashMap<String,String>... feedData)
@@ -344,11 +349,25 @@ this.context=cont[0];
             {
                 Log.d("parse", "link matched");
                 parseLink(parser) ;
+
                 feedMap.put("link", LINK);
             }
             else if(name.equalsIgnoreCase("description"))
             {
                  parseDescription(parser) ;
+                // get detailed article full length image
+                String l=null;
+                webExtract web=new webExtract();
+                switch(SOURCE) {
+                    case "NDTV":
+
+                        if((l=web.ndtvImage(LINK))!=null)
+                        {
+                            SRC=l;
+                        }
+                        break;
+                }
+                //test end
                 feedMap.put("description", DESCRIPTION);
                 feedMap.put("source", SOURCE);
                 feedMap.put("src", "https:"+SRC);

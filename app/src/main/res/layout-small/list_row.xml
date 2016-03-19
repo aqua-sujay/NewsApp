@@ -24,7 +24,7 @@
         android:background="#ffff"
         android:textAlignment="center"
         android:layout_alignBottom="@+id/imageView"
-        android:textSize="10sp" />
+        android:textSize="15sp" />
     <ImageView
         android:layout_width="0dp"
         android:layout_height="48dp"

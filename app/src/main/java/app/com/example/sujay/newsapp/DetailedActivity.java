@@ -81,7 +81,10 @@ public class DetailedActivity extends FragmentActivity{
 
             fx.setArguments(data);
             //to show link to website on post
+            if(position>0)
             cursor.moveToPosition(position-1);
+            else
+            cursor.moveToPosition(position);
             lin=cursor.getString(cursor.getColumnIndex("LINK"));
 
 
