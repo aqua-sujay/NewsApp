@@ -64,8 +64,8 @@ public class settingsFragment extends PreferenceFragment implements SharedPrefer
                 long day=Integer.parseInt(sp.getString("delete_posts_older_than_key", "5"));
                 Log.d("shared", "time " + date.getTime() + "TIMESTAMP-" + new Timestamp(date.getTime() - (sec * day)).toString());
 
-           //   db.delete("NEWS_TABLE", "TIMESTAMP" + "<=?", new String[]{ new Timestamp(date.getTime()).toString()});
-                Cursor cursortest=db.query("NEWS_TABLE", new String[]{"DATE"}, "RowTIme<="+"?", new String[]{new Timestamp(date.getTime()-(sec*day)).toString()}, null, null, null);
+              db.delete("NEWS_TABLE", "RowTime" + "<=?", new String[]{ new Timestamp(date.getTime()).toString()});
+                Cursor cursortest=db.query("NEWS_TABLE", new String[]{"DATE"}, "RowTime<="+"?", new String[]{new Timestamp(date.getTime()-(sec*day)).toString()}, null, null, null);
 
                 while(cursortest.moveToNext())
                 {

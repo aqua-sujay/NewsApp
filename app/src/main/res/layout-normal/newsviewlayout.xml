@@ -21,7 +21,7 @@
         android:layout_alignParentRight="true"
         android:textAlignment="center"
         android:textSize="20dp"
-        android:background="#fbc603" />
+        android:background="#000000"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="400dp"
